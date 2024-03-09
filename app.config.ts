@@ -1,6 +1,5 @@
 export default defineAppConfig({
-  title: "Romain Paris",
-  theme: {
-    dark: true,
-  },
+  title: "Nuxt Boilerplate",
+  description: "Nuxt Boilerplate",
+  lang: "en",
 });

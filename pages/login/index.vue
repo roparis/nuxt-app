@@ -1,16 +1,17 @@
 <script setup lang="ts">
-const emailId = useId();
-const passwordId = useId();
+useHead({
+  title: "Nuxt Boilerplate - Login",
+  meta: [{ name: "description", content: "Login page" }],
+  bodyAttrs: {
+    // Add a class to the body tag
+    class: "login",
+  },
+});
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <NuxtPage />
-    <form>
-      <label :for="emailId">Email</label>
-      <input :id="emailId" name="email" type="email" />
-      <label :for="passwordId">Password</label>
-      <input :id="passwordId" name="password" type="password" />
-    </form>
-  </div>
+  <HeroTitle title="Login" definition="This is the login page." />
+  <section class="flex flex-col max-w-[350px]"></section>
 </template>
+
+<NuxtPage />
