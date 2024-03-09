@@ -11,8 +11,23 @@ export default defineNuxtConfig({
       apiBase: "/api",
     },
   },
-
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    [
+      "@vee-validate/nuxt",
+      {
+        // disable or enable auto imports
+        autoImports: true,
+        // Use different names for components
+        componentNames: {
+          Form: "VeeForm",
+          Field: "VeeField",
+          FieldArray: "VeeFieldArray",
+          ErrorMessage: "VeeErrorMessage",
+        },
+      },
+    ],
+  ],
   app: {
     head: {
       charset: "utf-8",
