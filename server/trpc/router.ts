@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { publicProcedure, router } from "../trpc";
+import { publicProcedure, router } from "./trpc";
 import { userRouter } from "~/server/trpc/routers/userRouter";
 
 export const appRouter = router({

@@ -5,6 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  "@prisma/client":
+    specifier: 5.10.2
+    version: 5.10.2(prisma@5.10.2)
+  "@trpc/client":
+    specifier: ^10.45.1
+    version: 10.45.1(@trpc/server@10.45.1)
+  "@trpc/server":
+    specifier: ^10.45.1
+    version: 10.45.1
   "@vee-validate/nuxt":
     specifier: ^4.12.6
     version: 4.12.6(vue@3.4.21)
@@ -17,6 +26,12 @@ dependencies:
   nuxt:
     specifier: ^3.10.3
     version: 3.10.3(vite@5.1.5)
+  superjson:
+    specifier: ^2.2.1
+    version: 2.2.1
+  trpc-nuxt:
+    specifier: ^0.10.20
+    version: 0.10.20(@trpc/client@10.45.1)(@trpc/server@10.45.1)
   vue:
     specifier: ^3.4.21
     version: 3.4.21
@@ -40,6 +55,9 @@ devDependencies:
   prettier:
     specifier: 3.2.5
     version: 3.2.5
+  prisma:
+    specifier: ^5.10.2
+    version: 5.10.2
 
 packages:
   /@alloc/quick-lru@5.2.0:
@@ -1894,6 +1912,64 @@ packages:
       }
     dev: false
 
+  /@prisma/client@5.10.2(prisma@5.10.2):
+    resolution:
+      {
+        integrity: sha512-ef49hzB2yJZCvM5gFHMxSFL9KYrIP9udpT5rYo0CsHD4P9IKj473MbhU1gjKKftiwWBTIyrt9jukprzZXazyag==,
+      }
+    engines: { node: ">=16.13" }
+    requiresBuild: true
+    peerDependencies:
+      prisma: "*"
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      prisma: 5.10.2
+    dev: false
+
+  /@prisma/debug@5.10.2:
+    resolution:
+      {
+        integrity: sha512-bkBOmH9dpEBbMKFJj8V+Zp8IZHIBjy3fSyhLhxj4FmKGb/UBSt9doyfA6k1UeUREsMJft7xgPYBbHSOYBr8XCA==,
+      }
+
+  /@prisma/engines-version@5.10.0-34.5a9203d0590c951969e85a7d07215503f4672eb9:
+    resolution:
+      {
+        integrity: sha512-uCy/++3Jx/O3ufM+qv2H1L4tOemTNqcP/gyEVOlZqTpBvYJUe0tWtW0y3o2Ueq04mll4aM5X3f6ugQftOSLdFQ==,
+      }
+
+  /@prisma/engines@5.10.2:
+    resolution:
+      {
+        integrity: sha512-HkSJvix6PW8YqEEt3zHfCYYJY69CXsNdhU+wna+4Y7EZ+AwzeupMnUThmvaDA7uqswiHkgm5/SZ6/4CStjaGmw==,
+      }
+    requiresBuild: true
+    dependencies:
+      "@prisma/debug": 5.10.2
+      "@prisma/engines-version": 5.10.0-34.5a9203d0590c951969e85a7d07215503f4672eb9
+      "@prisma/fetch-engine": 5.10.2
+      "@prisma/get-platform": 5.10.2
+
+  /@prisma/fetch-engine@5.10.2:
+    resolution:
+      {
+        integrity: sha512-dSmXcqSt6DpTmMaLQ9K8ZKzVAMH3qwGCmYEZr/uVnzVhxRJ1EbT/w2MMwIdBNq1zT69Rvh0h75WMIi0mrIw7Hg==,
+      }
+    dependencies:
+      "@prisma/debug": 5.10.2
+      "@prisma/engines-version": 5.10.0-34.5a9203d0590c951969e85a7d07215503f4672eb9
+      "@prisma/get-platform": 5.10.2
+
+  /@prisma/get-platform@5.10.2:
+    resolution:
+      {
+        integrity: sha512-nqXP6vHiY2PIsebBAuDeWiUYg8h8mfjBckHh6Jezuwej0QJNnjDiOq30uesmg+JXxGk99nqyG3B7wpcOODzXvg==,
+      }
+    dependencies:
+      "@prisma/debug": 5.10.2
+
   /@rollup/plugin-alias@5.1.0(rollup@4.12.1):
     resolution:
       {
@@ -2251,6 +2327,24 @@ packages:
         integrity: sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==,
       }
     engines: { node: ">=18" }
+
+  /@trpc/client@10.45.1(@trpc/server@10.45.1):
+    resolution:
+      {
+        integrity: sha512-nVbAk1xpIiI64WgzXGgfxPOGgHoYvffn1IsjV1D/Ri7DL4BKuo2qtZ7UQ+OuHkzH2M8j4ikSVBDpk545fOdvpw==,
+      }
+    peerDependencies:
+      "@trpc/server": 10.45.1
+    dependencies:
+      "@trpc/server": 10.45.1
+    dev: false
+
+  /@trpc/server@10.45.1:
+    resolution:
+      {
+        integrity: sha512-KOzBEVaHW9IxEedUP9E50y0tYxAuvlzyjn80Bpemw4rcNbT4WtJnhkFPUY+qDJl7Crt3B/oY2qMgSxVWi9toLg==,
+      }
+    dev: false
 
   /@trysound/sax@0.2.0:
     resolution:
@@ -3546,6 +3640,16 @@ packages:
       depd: 2.0.0
       keygrip: 1.1.0
     dev: true
+
+  /copy-anything@3.0.5:
+    resolution:
+      {
+        integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==,
+      }
+    engines: { node: ">=12.13" }
+    dependencies:
+      is-what: 4.1.16
+    dev: false
 
   /core-util-is@1.0.3:
     resolution:
@@ -5219,6 +5323,14 @@ packages:
         integrity: sha512-LnQR4bZ9IADDRSkvpqMGvt/tEJWclzklNgSw48V5EAaAeDd6qGvN8ei6k5p0tvxSR171VmGyHuTiAOfxAbr8kA==,
       }
     engines: { node: ^12.20.0 || ^14.13.1 || >=16.0.0 }
+
+  /is-what@4.1.16:
+    resolution:
+      {
+        integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==,
+      }
+    engines: { node: ">=12.13" }
+    dev: false
 
   /is-wsl@2.2.0:
     resolution:
@@ -7412,6 +7524,17 @@ packages:
     engines: { node: ^14.13.1 || >=16.0.0 }
     dev: false
 
+  /prisma@5.10.2:
+    resolution:
+      {
+        integrity: sha512-hqb/JMz9/kymRE25pMWCxkdyhbnIWrq+h7S6WysJpdnCvhstbJSNP/S6mScEcqiB8Qv2F+0R3yG+osRaWqZacQ==,
+      }
+    engines: { node: ">=16.13" }
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      "@prisma/engines": 5.10.2
+
   /proc-log@3.0.0:
     resolution:
       {
@@ -8326,6 +8449,16 @@ packages:
       ts-interface-checker: 0.1.13
     dev: true
 
+  /superjson@2.2.1:
+    resolution:
+      {
+        integrity: sha512-8iGv75BYOa0xRJHK5vRLEjE2H/i4lulTjzpUXic3Eg8akftYjkmQDa8JARQ42rlczXyFR3IeRoeFCc7RxHsYZA==,
+      }
+    engines: { node: ">=16" }
+    dependencies:
+      copy-anything: 3.0.5
+    dev: false
+
   /supports-color@5.5.0:
     resolution:
       {
@@ -8557,6 +8690,23 @@ packages:
       {
         integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==,
       }
+    dev: false
+
+  /trpc-nuxt@0.10.20(@trpc/client@10.45.1)(@trpc/server@10.45.1):
+    resolution:
+      {
+        integrity: sha512-OSehO1f/nmJ5osmhmyAf0UxhmR5Dy7IU3d52e1ZC3G9i3sOh3mhvN75msoeNCeOzl8ESN73JRQ7gDt0kwkAhZA==,
+      }
+    peerDependencies:
+      "@trpc/client": ^10.38.1 <11
+      "@trpc/server": ^10.38.1 <11
+    dependencies:
+      "@trpc/client": 10.45.1(@trpc/server@10.45.1)
+      "@trpc/server": 10.45.1
+      h3: 1.11.1
+      ohash: 1.1.3
+    transitivePeerDependencies:
+      - uWebSockets.js
     dev: false
 
   /ts-interface-checker@0.1.13:

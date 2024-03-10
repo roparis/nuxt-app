@@ -28,6 +28,9 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  build: {
+    transpile: ["trpc-nuxt"],
+  },
   app: {
     head: {
       charset: "utf-8",
