@@ -7,9 +7,9 @@ const { title, definition } = defineProps({
 
 <template>
   <div>
-    <h1 class="text-5xl text-balance">{{ title }}</h1>
+    <h1 class="text-5xl">{{ title }}</h1>
     <section class="py-4">
-      <p class="w-1/2">
+      <p class="text-balance">
         {{ definition }}
       </p>
     </section>

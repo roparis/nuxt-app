@@ -1,6 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import path from "path";
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   runtimeConfig: {
     // The private keys which are only available server-side
     // will be overridden by the environment variables in .env
@@ -13,6 +15,7 @@ export default defineNuxtConfig({
   },
   modules: [
     "@nuxtjs/tailwindcss",
+    "nuxt-primevue",
     [
       "@vee-validate/nuxt",
       {
@@ -28,6 +31,12 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  primevue: {
+    usePrimeVue: true,
+    components: {
+      prefix: "Prime",
+    },
+  },
   app: {
     head: {
       charset: "utf-8",
@@ -41,5 +50,9 @@ export default defineNuxtConfig({
     //pageTransition: { name: 'page', mode: 'out-in' }
   },
   // Importing global styles
-  css: ["~/assets/css/main.css"],
+  css: [
+    "~/assets/css/main.css",
+    //"primevue/resources/themes/lara-dark-indigo/theme.css",
+    "primevue/resources/themes/saga-blue/theme.css",
+  ],
 });

@@ -7,13 +7,13 @@ const isOpenMessage = ref(false);
   <div>
     <button
       @click="isOpenMessage = !isOpenMessage"
-      class="border rounded py-2 px-8 bg-teal-300 hover:bg-teal-400 transition-all ease-in-out"
+      class="border rounded py-2 px-6 bg-primary transition-all ease-in-out"
     >
-      {{ isOpenMessage ? "Close" : "Open" }}
+      Open Modal
     </button>
     <section
       v-if="isOpenMessage"
-      class="fixed top-0 right-0 w-full h-full flex justify-center items-center bg-black bg-opacity-80"
+      class="fixed top-0 right-0 w-full h-full flex justify-center items-center bg-black bg-opacity-80 z-50"
     >
       <div class="bg-white p-8">
         <p>

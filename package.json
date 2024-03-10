@@ -14,7 +14,9 @@
     "@vee-validate/nuxt": "^4.12.6",
     "@vee-validate/zod": "^4.12.6",
     "autoprefixer": "^10.4.18",
+    "chart.js": "^4.4.2",
     "nuxt": "^3.10.3",
+    "primevue": "^3.49.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "zod": "^3.22.4"
@@ -23,6 +25,7 @@
     "@nuxtjs/tailwindcss": "^6.11.4",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
+    "nuxt-primevue": "^0.3.1",
     "prettier": "3.2.5"
   },
   "lint-staged": {
